@@ -1,7 +1,7 @@
 function validatePwd() {
-    var name = document.getElementById('username').value;
-	var password = document.getElementById('password').value.length;
-    var alphaNumericValidtion = /^[0-9a-zA-Z]+$/;
+    let name = document.getElementById('username').value;
+	let password = document.getElementById('password').value.length;
+    let alphaNumericValidtion = /^[0-9a-zA-Z]+$/;
     let flag = true;
     if(name == null) {
         alert("Username cannot be empty");
@@ -21,13 +21,12 @@ function validatePwd() {
 }
 
 function formValidation() {
-    var claimNum = document.getElementById('ClaimNumber').value;
-    var claimPrgm = document.getElementById('ClaimPrograms').value;
+    let claimNum = document.getElementById('ClaimNumber').value;
+    let claimPrgm = document.getElementById('ClaimPrograms').value;
     document.getElementById("ClaimNumberValidateMsg").innerHTML = '';
     document.getElementById("ClaimProgramsValidateMsg").innerHTML = '';
-    console.log("formValidation()", claimNum, claimPrgm);
-    var lettersAlphaNumeric = /^[0-9a-zA-Z-]+$/;
-	var claimNumVal = /^\+?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+    let lettersAlphaNumeric = /^[0-9a-zA-Z-]+$/;
+	let claimNumVal = /^\+?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
     if (!claimNum.match(lettersAlphaNumeric)) 
 	{
 		 document.getElementById("ClaimNumberValidateMsg").innerHTML = "No Special Characters allowed";

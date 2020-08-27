@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:rgb(41, 149, 238);
 }
 
 code {
@@ -193,6 +194,10 @@ td {
 tr {
   border-collapse: collapse;
     width: 100%;
+}
+
+p {
+ color: red;
 }
 
 
