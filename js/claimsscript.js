@@ -1,18 +1,21 @@
 function validatePwd() {
     let name = document.getElementById('username').value;
 	let password = document.getElementById('password').value.length;
+	document.getElementById("userNameValidateMsg").innerHTML = '';
+	document.getElementById("pwdValidateMsg").innerHTML = '';
+	 
     let alphaNumericValidtion = /^[0-9a-zA-Z]+$/;
     let flag = true;
     if(name == null) {
-        alert("Username cannot be empty");
+	    document.getElementById("userNameValidateMsg").innerHTML = "Username cannot be empty";
 		flag = false;
     }
-    else if(!name.match(alphaNumericValidtion)) {
-        alert("Username is not allowed with special characters");
+   if(!name.match(alphaNumericValidtion)) {
+		document.getElementById("userNameValidateMsg").innerHTML = "Username is not allowed with special characters";
 		flag = false;
     }
-	else if(password < 4) {
-        alert("Password should be atleast 4 characters");
+	if(password < 4) {
+		document.getElementById("pwdValidateMsg").innerHTML = "Password should be atleast 4 characters";
 		flag = false;
     }
 	if(flag){
