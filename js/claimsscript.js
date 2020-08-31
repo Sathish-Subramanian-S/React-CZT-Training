@@ -1,3 +1,5 @@
+
+
 function validatePwd() {
     let name = document.getElementById('username').value;
 	let password = document.getElementById('password').value.length;
@@ -26,10 +28,15 @@ function validatePwd() {
 function formValidation() {
     let claimNum = document.getElementById('ClaimNumber').value;
     let claimPrgm = document.getElementById('ClaimPrograms').value;
+    let startDate = document.getElementById('StartDate').value;
+    let endDate = document.getElementById('EndDate').value;
     document.getElementById("ClaimNumberValidateMsg").innerHTML = '';
     document.getElementById("ClaimProgramsValidateMsg").innerHTML = '';
+    document.getElementById("startDateValidateMsg").innerHTML = '';
+    document.getElementById("endDateValidateMsg").innerHTML = '';
     let lettersAlphaNumeric = /^[0-9a-zA-Z-]+$/;
-	let claimNumVal = /^\+?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+    let claimNumVal = /^\+?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})$/;
+    let dateReg = /^\d{4}([./-])\d{2}\1\d{2}$/
     if (!claimNum.match(lettersAlphaNumeric)) 
 	{
 		 document.getElementById("ClaimNumberValidateMsg").innerHTML = "No Special Characters allowed";
@@ -42,6 +49,12 @@ function formValidation() {
     }
 	if (claimPrgm.length == 0) {
         document.getElementById("ClaimProgramsValidateMsg").innerHTML = "This field is required";
+    }
+    if (!startDate.match(dateReg)) {
+        document.getElementById("startDateValidateMsg").innerHTML = "Please enter the valid date";
+    }
+    if (!endDate.match(dateReg)) {
+        document.getElementById("endDateValidateMsg").innerHTML = "Please enter the valid date";
     }
 }
 
